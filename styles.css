@@ -1,0 +1,61 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+    font-weight: 200;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    background: linear-gradient(to right, rgb(106, 55, 244), rgb(47, 94, 250));
+}
+
+.calculator-grid {
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    min-height: 100vh;
+    grid-template-columns: repeat(4, 100px);
+    grid-template-rows: minmax(120px, auto) repeat(5, 100px);
+}
+
+.calculator-grid > button {
+    font-weight: 400;
+    cursor: pointer;
+    font-size: 2rem;
+    border: 1px solid white;
+    outline: none;
+    transition: .4s;
+    background-color: rgba(255,255,255, .75);
+}
+
+.calculator-grid > button:hover {
+    background-color: rgba(255,255,255, .9);
+}
+
+.span-two {
+    grid-column: span 2;
+}
+
+.output {
+    font-weight: 400;
+    grid-column: 1 / -1;
+    padding: 10px;
+    display: flex;
+    align-items: flex-end;
+    flex-direction: column;
+    justify-content: space-around;
+    background: rgba(0,0,0,.75);
+    word-wrap: break-word;
+    word-break: break-all;
+}
+
+.output .previous-operand {
+    font-size: 1.5rem;
+    color: rgba(255,255,255, .75);
+}
+
+.output .current-operand {
+    font-size: 2.5rem;
+    color: rgba(255, 255, 255, .9);
+}
